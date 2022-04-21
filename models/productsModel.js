@@ -43,7 +43,7 @@ function update(data, id) {
 
  function remove(id) {
     const query = `delete from products where id=${parseInt(id)}`
-    const deleteData = db(query);
+    const deleteData =  db(query);
     return deleteData;
 }
 

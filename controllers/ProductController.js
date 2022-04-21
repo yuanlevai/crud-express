@@ -74,13 +74,13 @@ const update = async (req, res) => {
     }
 }
 
-const removed = async (req, res) => {
+const remove = async (req, res) => {
     try {
         const productId = req.params.id;
         const productById = await product.get(productId);
 
         if (productById.length !==0) {
-            const removed = await product.remove(productId)
+            const remove = await product.remove(productId)
             .then(row => {
                 res.status(201).json({
                     message : `product with id${productId} success to delete`
@@ -103,5 +103,5 @@ module.exports = {
     getById,
     create,
     update,
-    removed
+    remove,
 }
